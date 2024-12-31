@@ -1,0 +1,977 @@
+@charset "UTF-8";
+/*-------------------------------------------------------------------
+Project             : ProdCo - Product Landing Page
+Version             : 1.0
+Author              : https://themeforest.net/user/codeonec
+URI 				: http://codeonec.co/prodco
+Author URI 			: http://codeonec.co/
+=====================================================================
+
+[Table of contents]
+
+01. Set-up
+02. Pre-loader
+03. Navbar
+04. Cover
+05. About
+06. Useability
+07. Features
+08. Products
+09. Download
+10. Compare
+11. Customer-review(Testimonials)
+12. Subscribe(Newsletter)
+13. FAQs
+14. Contact
+15. Footer
+
+==================================================================*/
+
+
+/* -----------------------------------------
+			   01.	Set-up
+-------------------------------------------- */
+:root
+{
+    --bg-main: #181818;
+    --bg-sec: #1d1d1f;
+    --color-main: #fefefe;
+    --color-txt: #9E9E9E;
+    --color-sec: #304ffe;
+    --color-border: rgba(255,255,255,0.1);
+}
+[data-color-scheme="light"]
+{
+    --bg-main: #fefefe;
+    --bg-sec: #f7f9ff;
+    --color-main: #161d2e;
+    --color-txt: #6b7280;
+    --color-sec: #304ffe;
+    --color-border: rgba(0,0,0,0.1);
+} 
+*
+{
+    font-family: 'Inter',sans-serif;
+}body
+{
+    background: var(--bg-main);
+    color: var(--color-main);
+}
+h1,h2,h3{
+    color: var(--color-main);
+}
+p
+{
+    color: var(--color-txt);
+}
+
+.btn-main
+{
+    background: var(--color-sec );
+    color: #fefefe;
+    font-size: 16px;
+    padding: 10px 32px;
+    border-radius: 30px;
+    border: 2px solid var(--color-sec);
+    transition: 0.5s;
+    text-decoration: none;
+    font-weight: 500;
+}
+.btn-main:hover
+{
+    text-decoration: none;
+    background: transparent;
+    color: var(--color-main);
+}
+.section-head
+{
+    margin-bottom: 60px;
+}
+.section-head-tag
+{
+    margin-bottom: 15px;
+    color: var(--color-sec);
+    font-size: 18px;
+    font-weight: 600;
+}
+.section-head-title
+{
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.section-head-body
+{
+    font-size: 18px;
+}
+
+
+/* -----------------------------------------
+			   02.  Pre-Loader
+-------------------------------------------- */
+#pre-loader
+{
+    position: absolute;
+	height: 100vh;
+    width: 100%;
+    background: var(--bg-main);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#pre-loader .spinner-grow
+{
+    color: var(--color-sec) !important;
+	width: 60px;
+	height: 60px;      
+}
+
+
+/* -----------------------------------------
+			   03.	Navbar
+-------------------------------------------- */
+nav{
+    border-bottom: 1px solid var(--color-border);
+    background: var(--bg-main);
+}
+nav .navbar-nav .nav-item
+{
+    margin: 10px 15px;
+}
+nav .navbar-nav .nav-item .nav-link
+{
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.5s;
+    color: var(--color-txt);
+}
+nav .navbar-nav .nav-item .nav-link:hover
+{
+    color: var(--color-sec);
+}
+nav .navbar-nav .nav-link.active
+{
+    color: var(--color-sec) !important;   
+}
+nav .navbar-toggler
+{
+    border: 0;
+    outline: none;
+}
+nav .navbar-toggler i
+{
+    color: var(--color-txt) !important;
+}
+nav .btn-main
+{
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 15px;
+}
+
+
+@media (max-width: 991.98px)
+{
+    nav .navbar-brand
+    {
+        order: 2;
+        margin: 0 !important;
+    }
+    nav .navbar-brand img
+    {
+        height: 15px;
+    }
+    nav .navbar-toggler
+    {
+        order: 1;
+    }
+    nav .btn-main
+    {
+        order: 3;
+        padding: 5px 15px;
+    }
+    nav .navbar-collapse
+    {
+        order: 4;
+    }
+    nav .navbar-nav
+    {
+        height: 94vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    nav .navbar-nav .nav-item
+    {
+        margin: 10px 0;
+    } 
+     
+}
+
+
+/* -----------------------------------------
+			   04.	Cover
+-------------------------------------------- */
+#cover
+{
+    padding: 22vh 0 100px 0;
+}
+#cover .cover-image img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 350px;
+    width: 100%;
+    max-height: 500px;
+    transition: 0.5s;
+    animation: float 5s infinite;
+}
+@keyframes float
+{
+    0%
+    {
+        transform: translateY(-15px);
+    }
+    50%
+    {
+        transform: translateY(15px);
+    }
+    100%
+    {
+        transform: translateY(-15px);
+    }
+}
+#cover .cover-body h1
+{
+    font-weight: 800;
+    font-size: 60px;
+}
+#cover .cover-body p
+{
+    margin: 20px 0;
+    font-size: 18px;
+}
+#cover .cover-body h5
+{
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+@media (max-width: 767.98px)
+{
+    #cover .cover-body h1
+    {
+        font-size: 50px;
+    }
+    #cover
+    {
+        padding: 15vh 0;
+    }
+    #cover .cover-image img
+    {
+        margin-bottom: 35px;
+    }
+    #cover .cover-hl
+    {
+        padding-top: 50px !important;
+        margin-top: 0;
+    }
+}
+
+#cover .cover-hl
+{
+    padding-top: 15vh;
+}
+#cover .cover-hl .product-highlight
+{
+    margin-right: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+#cover .cover-hl .product-highlight span:nth-child(1)
+{
+    color: var(--color-txt);
+}
+#cover .cover-hl .product-highlight span:nth-child(3)
+{
+    color: var(--color-main);
+}
+
+
+/* -----------------------------------------
+			   05.	About
+-------------------------------------------- */
+#about
+{
+    padding: 100px 0;
+    background: var(--bg-sec);
+}
+#about .about-body .about-body-item .about-body-icon-cnt
+{
+    height: 80px;
+    width: 80px;
+    margin-right: 15px;
+    border-radius: 15px;
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#about .about-body .about-body-item .about-body-icon
+{
+    /* margin-top: 5px; */
+    /* margin-right: 15px; */
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    text-align: center;
+    background: var(--color-sec);
+    font-size: 32px;
+    color: #fefefe;
+    line-height: 50px;
+}
+#about .about-body .about-body-item  .about-body-text-head
+{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+#about .about-body .about-body-item  .about-body-text-main
+{
+    font-size: 16px;
+}
+#about .about-body .about-body-item  .about-body-text-main p
+{
+    margin-bottom: 0;
+}
+
+
+/* -----------------------------------------
+			   06.	Useability
+-------------------------------------------- */
+#useability
+{
+    padding: 100px 0;
+}
+#useability .useable-body .useable-abstracts
+{
+    padding-top: 10px;
+}
+#useability .useable-body .useable-abstracts .abstract-container
+{
+    padding: 0 15px;
+}
+#useability .useable-body .useable-abstracts .abstract-container .abstract-icon
+{
+    height: 65px;
+    width: 65px;
+    border-radius: 15px;
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: #fefefe;
+}
+#useability .useable-body .useable-abstracts .abstract-container .abstract-icon i
+{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-align: center;
+    background: var(--color-sec);
+    font-size: 28px;
+    line-height: 40px;
+}
+#useability .useable-body .useable-abstracts .abstract-container .abstract-text h5
+{
+    font-weight: 600;
+}
+#useability .useable-body .useable-abstracts .abstract-container .abstract-text p
+{
+    font-size: 16px; 
+    margin-top: 10px;  
+}
+#useability .useable-image
+{
+    position: relative;
+}
+#useability .useable-image img
+{
+    display: block;
+    max-width: 220px;
+    width: 100%;
+    max-height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width: 991.98px)
+{
+    #useability .useable-image
+    {
+        order: 1 !important;
+    }
+    #useability .useable-image img
+    {
+        margin-bottom: 50px;
+    }
+    #useability .useable-body
+    {
+        order: 2 !important;
+    }
+}
+
+
+/* -----------------------------------------
+			   07.	Features
+-------------------------------------------- */
+#features
+{
+    padding: 100px 0;
+    background: var(--bg-sec);
+}
+#features .features-container .features-img img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#features .features-container .feature .feature-icon
+{
+    height: 65px;
+    width: 65px;
+    border-radius: 15px;
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+#features .features-container .feature .feature-icon i
+{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    text-align: center;
+    background: var(--color-sec);
+    font-size: 26px;
+    color: #fefefe;
+    line-height: 40px;
+}
+#features .features-container .features-left .feature .feature-icon
+{
+    margin-left: 15px;
+}
+#features .features-container .features-right .feature .feature-icon
+{
+    margin-right: 15px;
+}
+#features .features-container .feature .feature-body h5
+{
+    font-weight: 600;
+}
+@media (max-width: 991.98px)
+{
+    #features .features-container .features-img img
+    {
+        margin-bottom: 50px;
+    }
+    #features .features-1
+    {
+        order: 2 !important;
+        text-align: left !important;
+    }
+    #features .features-container .features-left .feature .feature-icon
+    {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+    #features .features-2
+    {
+        order: 1 !important;
+    }
+    #features .features-3
+    {
+        order: 3 !important;
+    }
+}
+
+
+/* -----------------------------------------
+			   08.	Products
+-------------------------------------------- */
+#products
+{
+    padding: 100px 0;
+}
+#products .products-slider .product
+{
+    background: var(--bg-sec);
+    padding: 30px 50px;
+}
+#products .products-slider .product .product-img img
+{
+    max-width: 220px;
+    max-height: 200px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+@media (max-width: 300px)
+{
+    #products .products-slider .product .product-img img
+    {
+        max-width: 100%;
+        max-height: auto;
+    }
+}
+#products .products-slider .product .product-body p
+{
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+#products .products-slider .product .product-body h5
+{
+    font-weight: 600;
+    margin-bottom: 0;
+}
+#products .products-slider .product .product-body .btn-main
+{
+    padding: 7px 15px;
+    margin-top: 17px;
+}
+#products .owl-carousel .owl-nav
+{
+    margin-top: 30px;
+}
+#products .owl-carousel .owl-nav .owl-next,#products .owl-carousel .owl-nav .owl-prev
+{
+    outline: none;
+}
+#products .owl-carousel .owl-nav .owl-next:hover,#products .owl-carousel .owl-nav .owl-prev:hover
+{
+    background: transparent;
+}
+#products .owl-carousel .owl-nav .owl-nav-btn
+{
+    background: var(--color-sec);
+    font-size: 29px;
+    border-radius: 50%;
+    padding: 7px 7px;
+    transition: 0.5s;
+    border: 2px solid transparent;
+}
+#products .owl-carousel .owl-nav .owl-nav-btn:hover
+{
+    background: transparent;
+    border-color: var(--color-sec);
+}
+
+
+/* -----------------------------------------
+			   09.	Download
+-------------------------------------------- */
+#download
+{
+    padding: 100px 0;
+    background: linear-gradient(90deg,rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(../images/watch-img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+#download h2
+{
+    color: #fefefe;
+}
+#download p
+{
+    color: #9E9E9E;
+}
+#download a img
+{
+    margin: 10px;
+}
+@media (max-width: 575.98px)
+{
+    #download a img{
+        height: 40px;
+        width: auto;
+        margin: 5px;
+    }
+}
+
+
+/* -----------------------------------------
+			   10.	Compare
+-------------------------------------------- */
+#compare
+{
+    padding: 100px 0;
+}
+#compare .product-table .table-dark
+{
+    background: transparent;
+    color: var(--color-txt);
+}
+#compare .product-table .table
+{
+    border: 1px solid var(--color-border);
+}
+#compare .product-table .table td,#compare .product-table .table th
+{
+    padding: 10px;
+}
+#compare .product-table .table-dark td, #compare .product-table .table-dark th,#compare .product-table .table-dark thead th
+{
+    border-color: var(--color-border);
+}
+#compare .product-table .table-dark.table-striped tbody tr:nth-of-type(odd)
+{
+    background: var(--bg-sec);
+}
+#compare .product-table .table thead th
+{
+    padding: 15px;    
+}
+#compare .product-table .table thead th img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 120px;
+}
+#compare .product-table .table tbody tr td,#compare .product-table .table thead tr th
+{
+    text-align: center;
+}
+#compare .product-table .table tbody tr th,#compare .product-table .table thead tr th
+{
+    color: var(--color-main);
+    font-weight: 600;
+}
+#compare .product-table .table thead tr th .compare-name
+{
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+#compare .product-table .table thead tr th .compare-type
+{
+    font-weight: 400;
+    color: var(--color-txt);
+    font-size: 14px;
+}
+#compare .product-table .table tbody .price
+{
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-main);
+}
+#compare .product-table .table tbody .buy-button a{
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fefefe;
+    background: var(--color-sec);
+    transition: 0.5s;
+    padding: 6px 15px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+}
+#compare .product-table .table tbody .buy-button a:hover
+{
+    color: var(--color-main);
+}
+#compare .product-table .table tbody .buy-button td
+{
+    padding: 15px 0;
+}
+#compare .product-table .table tbody .buy-button a:hover
+{
+    background: transparent;
+    border-color: var(--color-sec);
+}
+
+
+/* --------------------------------------------------------------
+			   11.	Customer Reviews(Testimonials)
+---------------------------------------------------------------- */
+#customer-reviews
+{
+    padding: 100px 0;
+}
+#customer-reviews .reviews-container .review
+{
+    background: var(--bg-sec);
+    padding: 40px;
+    position: relative;
+    border-radius: 30px;
+}
+#customer-reviews .reviews-container .review .quote-mark i
+{
+    color: var(--color-sec);
+    font-size: 40px;
+    transform: rotate(-180deg);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+}
+#customer-reviews .reviews-container .review .review-head
+{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+#customer-reviews .reviews-container .review .review-text
+{
+    font-size: 16px;
+}
+#customer-reviews .reviews-container .review .review-avtar 
+{
+    margin-top: 30px;
+}
+#customer-reviews .reviews-container .review .review-avtar .avtar-img img
+{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+#customer-reviews .reviews-container .review .review-avtar .avtar-body
+{
+    margin-left: 15px;
+}
+#customer-reviews .reviews-container .review .review-avtar .avtar-body h6
+{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--color-sec);
+}
+#customer-reviews .reviews-container .review .review-avtar .avtar-body p{
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+
+/* -----------------------------------------
+			   12.	Subscribe(Newsletter)
+-------------------------------------------- */
+#subscribe
+{
+    padding: 100px 0;
+    background-color: var(--bg-sec);
+}
+#subscribe .section-head
+{
+    margin-bottom: 30px !important;
+}
+#subscribe .subscribe-container .subscribe-form input
+{
+    padding: 10px 32px;
+    border-radius: 30px;
+    border: 2px solid var(--color-border);
+    outline: none;
+    background: var(--bg-main);
+    transition: 0.5s;
+    color: var(--color-main);
+}
+#subscribe .subscribe-container .subscribe-form input:focus
+{
+    background: transparent;
+    border-color: var(--color-sec);
+}
+#subscribe .subscribe-container .subscribe-form input, #subscribe .subscribe-container .subscribe-form button
+{
+    margin: 10px;
+}
+@media (max-width: 575.98px)
+{
+    #subscribe .subscribe-container .subscribe-form input,#subscribe .subscribe-container .subscribe-form button
+    {
+            width: 100%;
+    }
+}
+
+
+/* -----------------------------------------
+			   13.	FAQs
+-------------------------------------------- */
+#faqs
+{
+    padding: 100px 0;
+}
+#faqs .faqs-container .faq
+{
+    border-top: 1px solid var(--color-border);
+    padding: 15px;
+}
+#faqs .faqs-container .faq .faq-head
+{
+    padding: 15px 0px;
+    position: relative;
+}
+#faqs .faqs-container .faq .faq-head h5
+{
+    width: 90%;
+    cursor: pointer;
+}
+#faqs .faqs-container .faq .faq-head h5::before
+{
+    content: 'keyboard_arrow_down';
+    text-align: center;
+    font-size: 20px;
+    line-height: 27px;
+    font-family: 'Material Icons Round';
+    height: 25px;
+    width: 25px;
+    color: #fefefe;
+    background: var(--color-sec);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: 0.5s;
+}
+#faqs .faqs-container .faq .faq-head h5[aria-expanded=true]::before
+{
+    content: 'keyboard_arrow_up';
+}
+
+
+/* -----------------------------------------
+			   14.	Contact
+-------------------------------------------- */
+#contact
+{
+    padding: 100px 0;
+    background: var(--bg-sec);
+}
+#contact .contact-information .info .info-icon i
+{
+    height: 40px;
+    width: 40px;
+    background: var(--color-sec);
+    color: #fefefe;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+}
+#contact .contact-information .info p,#contact .contact-information .info a
+{
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+#contact .contact-information .info a
+{
+    text-decoration: none;
+    transition: 0.5s;
+}
+#contact .contact-information .info a:hover
+{
+    opacity: 0.95;
+}
+#contact .contact-form
+{
+    padding: 0 30px;
+}
+#contact .contact-form input ,#contact .contact-form textarea
+{
+    padding: 10px 32px;
+    border-radius: 30px;
+    border: 2px solid var(--color-border);
+    outline: none;
+    background: var(--bg-main);
+    transition: 0.5s;
+    color: var(--color-main);
+    width: 100%;
+}
+#contact .contact-form input:focus,#contact .contact-form textarea:focus
+{
+    background: transparent;
+    border-color: var(--color-sec);
+}
+@media (max-width: 991.98px)
+{
+    #contact .contact-form
+    {
+        padding: 15px;
+        margin-top: 30px;
+    }
+}
+@media (max-width: 575.98px) 
+{
+    #contact .contact-form .btn-main
+    {
+        width: 100%;
+    }
+}
+
+
+/* -----------------------------------------
+			   15.	Footer
+-------------------------------------------- */
+#footer .footer-main
+{
+    padding: 100px 0;
+}
+#footer .footer-social-links a
+{
+    color: #fefefe;
+    text-decoration: none;
+    border: 2px solid var(--color-sec);
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    font-size: 18px;
+    background: var(--color-sec);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 33px; 
+    transition: 0.5s;
+    margin: 0 10px;
+}
+#footer .footer-social-links a svg
+{
+    fill: #fefefe;
+    transition: 0.5s;
+}
+#footer .footer-social-links a:hover{
+    background: transparent;
+}
+#footer .footer-social-links a:hover svg
+{
+    fill: var(--color-main);
+}
+#footer .footer-links a 
+{
+    color: var(--color-sec);
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.5s;
+    margin: 0 3px;
+}
+#footer .footer-links a:hover
+{
+    opacity: 0.6;
+}
+#footer .footer-rights
+{
+    padding: 30px 0;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-txt);
+}
+#footer .footer-rights a
+{
+    text-decoration: none;
+    color: var(--color-sec);
+    transition: 0.5s;
+    backface-visibility: hidden;
+}
+#footer .footer-rights a:hover
+{
+    opacity: 0.7;
+}
